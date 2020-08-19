@@ -21,7 +21,7 @@ init:
 .PHONY: fetch
 fetch: init
 	# lets configure the cluster gitops repository URL on the requirements if its missing
-	jx gitops repository --source-dir $(OUTPUT_DIR)/namespaces
+	jx gitops repository create --source-dir $(OUTPUT_DIR)/namespaces
 
 	# set any missing defaults in the secrets mapping file
 	jx secret convert edit
